@@ -39,14 +39,14 @@ defmodule SspExWeb.ApiController do
 
 
     # WinNotice
-    IO.inspect(ad_list)
+    # IO.inspect(ad_list)
     winner = Enum.at(ad_list, 0)
-    win_url = winner.req_url <> "/win"
-    win_price = Enum.at(ad_list, 1).price
-    win_payload = %{request_id: request_id, price: win_price}
-    IO.inspect(win_payload)
+    # win_url = winner.req_url <> "/win"
+    # win_price = Enum.at(ad_list, 1).price
+    # win_payload = %{request_id: request_id, price: win_price}
+    # IO.inspect(win_payload)
 
-    HTTPoison.post!(win_url, Poison.encode!(win_payload), [{"Content-Type", "application/json"}])
+    # HTTPoison.post!(win_url, Poison.encode!(win_payload), [{"Content-Type", "application/json"}])
     render(conn, "api.json", url: winner.ad_url)
   end
 
